@@ -5,6 +5,8 @@ $container = $app->getContainer();
 
 $container['db'] = function ($c) {
     return new PDO('sqlite:../data/demo.db');
+    // mysql version
+    // return new PDO('mysql:host=localhost;dbname=demo', 'username', 'password');
 };
 
 $container['view'] = function ($c) {
