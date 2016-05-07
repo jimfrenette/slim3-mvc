@@ -18,16 +18,21 @@ class PlaceController
 
     public function index($request, $response)
     {
-        $place = $this->place->getPlaceList();
-        var_dump($place);
-        return $this->view->render($response, 'place.twig');
+        $result = $this->place->getPlaceList();
+        return $this->view->render(
+        	$response,
+        	'place.twig',
+        	array('places' => $result)
+        );
     }
 
     public function getPlace($request, $response, $args)
     {
-        //var_dump($args);
-        $place = $this->place->getPlace($args['id']);
-        var_dump($place);
-        return $this->view->render($response, 'place.twig');
+        $result = $this->place->getPlace($args['id']);
+        return $this->view->render(
+        	$response,
+        	'place.twig',
+        	array('place' => $result)
+        );        
     }
 }

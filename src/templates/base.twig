@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Slim 3 MVC Boilerplate</title>
+        <link rel="stylesheet" href="{{ base_url() }}/css/style.css">
+    </head>
+    <body>
+
+        {% include 'partials/navigation.twig' %}
+
+        <div class="main">
+            {% block content %}{% endblock %}
+        </div>
+
+    </body>
+</html>

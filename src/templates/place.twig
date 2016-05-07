@@ -1,1 +1,19 @@
-Places
+{% extends 'base.twig' %}
+
+{% block content %}
+
+<ul class="places">
+    {% for place in places %}
+    <li>
+    	{{ place.name }}<br />
+    	{{ place.region }}
+    </li>
+	{% else %}
+	<li>
+    	{{ place.name }}<br />
+    	{{ place.region }}
+    </li>    
+    {% endfor %}
+</ul>
+
+{% endblock %}
