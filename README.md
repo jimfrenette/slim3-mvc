@@ -1,3 +1,4 @@
+# slim3-mvc
 
 This application uses the Slim framework
 http://www.slimframework.com/
@@ -10,3 +11,9 @@ Navigate into your project’s root directory and execute the bash command shown
 composer require slim/slim "^3.0"
 
 ````
+
+## PHP-DI/Slim-Bridge
+
+* http://php-di.org/doc/frameworks/slim.html
+
+* https://github.com/PHP-DI/Slim-Bridge

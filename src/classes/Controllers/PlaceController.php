@@ -2,37 +2,26 @@
 
 namespace App\Controllers;
 
-use App\Models\Place as Model;
 use Slim\Views\Twig as View;
+use Psr\Http\Message\ResponseInterface as Response;
+use Psr\Http\Message\ServerRequestInterface as Request;
+use App\Models\Place as Place;
 
 class PlaceController
 {
-    protected $place;
-    protected $view;
-
-    public function __construct(Model $place, View $view)
+    public function index(Request $request, Response $response, View $view, Place $place)
     {
-        $this->place = $place;
-        $this->view = $view;
+        $result = $place->getPlaceList();
+
+        return $view->render($response, 'place.twig', array('places' => $result));
     }
 
-    public function index($request, $response)
+    public function getPlace(Request $request, Response $response, View $view, Place $place)
     {
-        $result = $this->place->getPlaceList();
-        return $this->view->render(
-        	$response,
-        	'place.twig',
-        	array('places' => $result)
-        );
-    }
+        $id = $request->getAttribute('route')->getArgument('id');
 
-    public function getPlace($request, $response, $args)
-    {
-        $result = $this->place->getPlace($args['id']);
-        return $this->view->render(
-        	$response,
-        	'place.twig',
-        	array('place' => $result)
-        );        
+        $result = $place->getPlace($id);
+
+        return $view->render($response, 'place.twig', array('place' => $result));
     }
 }
