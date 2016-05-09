@@ -17,3 +17,9 @@ composer require slim/slim "^3.0"
 * http://php-di.org/doc/frameworks/slim.html
 
 * https://github.com/PHP-DI/Slim-Bridge
+
+## Tags
+
+* oobdic - Out of the box DIC (Dependency Injection Configuration)
+
+* phpdi - PHP-DI dependency injection into the controller
